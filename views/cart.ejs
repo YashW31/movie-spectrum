@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/cart-style.css" />
+
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+</head>
+
+<body>
+    <nav class="nav-bar-side container">
+        <h1 class="title">Movie Spectrum</h1>
+        <div>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="homectsnav">
+          <a href="/home" class="nav-element mid">Home</a>
+          <a href="/movies" class="nav-element mid">Movies</a>
+          <a href="/fav" class="nav-element mid">Favourites</a>
+        </div>
+        <form class="search" action="/search" method="POST">
+          <input type="text" placeholder="Search" name="movie_name" />
+          <button type="submit" class="btn"><i class="fas fa-search icon"></i></button>
+        </form>
+        <div class="nav-right">
+            <form action="/cart" method="GET">
+                <button type="submit" class="btn"><i class='bx bx-cart icon' ></i></button>
+            </form>
+            <form action="/logout" method="POST">
+                <button type="submit" class="btn"><i class='bx bx-log-out-circle bx-flip-horizontal icon' ></i></button>
+            </form>
+        </div>
+    </nav>
+    <div class="section">
+        <div class="heading">
+            <h1 class="cart">CART</h1>
+            <p class="total">Total: ₹ <%= total %>/-</p>
+        </div>
+        <hr>
+        <div class="container cta">
+            <% movie.forEach(cart=> { %>
+            <div class="horizontal-cta">
+                <div class="info">
+                    <div class="heading">
+                        <h2 class="black-h2"><%= cart.c_movie_name %></h2>
+                        <p class="price">₹ <%= cart.c_price %>/-</p>
+                    </div>
+                    <p class="intro"><%= cart.c_overview %></p>
+                    <form action="/removecart/<%= cart._id %>" method="POST">
+                        <button class="remove">Remove</button>
+                    </form>
+                </div>
+                <img class="cart-img" src="/uploads/<%= cart.c_image %>">
+                
+            </div>
+            <% }) %>
+        </div>
+        <button class="checkout">Checkout</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/176f3c4d16.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<body>
+    <section class="main-img-div">
+        <nav class="nav-bar-side container">
+            <h1 class="title">Movie Spectrum</h1>
+            <div>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <div class="homectsnav">
+              <a href="/home" class="nav-element mid">Home</a>
+              <a href="/admin-movie-list" class="nav-element mid">Movies</a>
+            </div>
+            <div class="nav-right">
+                <form action="/Create" method="GET">
+                    <button type="submit" class="btn"><i class='bx bx-plus icon' ></i></button>
+                </form>
+                <form action="/logout" method="POST">
+                    <button type="submit" class="btn"><i class='bx bx-log-out-circle bx-flip-horizontal icon' ></i></button>
+                </form>
+            </div>
+        </nav>
+        <div class="hello-element container">
+            <h1 class="des">All Your Streaming Services in One Place</h1>
+            <h2 class="des1-text">Your Streaming Movie & TV Guide. Track, discover and find where to watch TV  shows and movies from Netflix, Amazon Prime,Hulu, Showtime and over 100 more services.</h2>        
+        </div>
+    </section>
+    
+    <section class="latest-movies container">
+        <h1 class="latest-heading">Movies Added</h1>
+            <div id="slider" class="owl-carousel">
+                <% admin_movie.forEach(movie => { %>
+                    <div class="content-area">
+                        <div class="img-area"><span class="linear"><img src="/uploads/<%= movie.image %>" alt="" class="img-prop"></span>
+                            <div class="overlay">
+                                <div class="content">
+                                    <div class="unzoom-text">
+                                        <a href="/adminmovie/<%= movie._id %>" class="movie-name"><%= movie.movie_name %></a>
+                                        <span><%= movie.timestamp %></span>
+                                    </div>
+                                    <form action="/deletemovie/<%= movie._id %>" method="post"  class="zoom-text">
+                                        <button type="submit" class="btn"><i class='bx bx-x img-icon'></i></button>
+                                        <a href="/editmovie/<%= movie._id %>"><i class='bx bx-edit img-icon' ></i></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                <% }) %> 
+            </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/176f3c4d16.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:"Josefin Sans",'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    padding-bottom: 5rem;
+}    
+li{
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+}
+body{
+    font-size: 2rem;
+    background: #021420;
+    color: #fff;
+}
+.main-img-div{
+    font-family:"Josefin Sans",'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+img{
+    width: 100%;
+    display: inline-block;
+}
+/* .Rec-col1
+{
+    position:relative;
+} */
+ .img-rec{
+    position: relative;
+    top:1rem;
+    left:1rem;
+    width: 90%;
+    z-index: 0;
+} 
+.movie-name
+{
+    position: relative;
+    z-index: 1;
+}
+.container{
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.main-img-div{
+    background-size:cover;
+    height : 100vh;
+    background:url(https://i.ibb.co/c1327x5/landing.jpg);
+}
+ .nav-bar-side{
+    background:transparent;
+} 
+.title{
+    color:white;
+ }
+.nav-element{
+    text-decoration:none;
+    color:white;
+    background: none;
+    border: none;
+}
+.btn{
+    color:white;
+    background: none;
+    border: none;
+    margin-left: 1rem;
+}
+
+.icon{
+    font-size: 2rem;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hello-element{
+    color:white;
+}
+.card-row-1{
+    color:black;
+}
+.card-row-2{
+    color:black;
+}
+.card-row-1-kids{
+    color:black;
+}
+.card-row-2-kids{
+    color:black;
+}
+::placeholder
+{
+    color:rgba(255, 255, 255, 0.596);
+}
+.search input 
+{
+        background:transparent;
+        border: 0.2rem white solid;
+        border-radius: 2rem;
+}
+        
+ @media(max-width:600px)
+{
+    .homectsnav{
+        display: none;
+    }
+    .nav-bar-side{
+        display: flex;    
+    }
+    .title
+    {   margin-top: 2rem;
+        font-size: 4rem;
+        padding: 1rem;
+    }
+    .iocnavbar
+    {
+        display: none;
+    }
+
+    .hello-element
+    {
+        display:flex;
+        flex-direction:column;
+        
+        margin-top:10rem;
+    }
+} 
+
+@media(min-width : 600px)
+{
+    .nav-bar-side
+    {
+        display: flex ;
+        flex-direction:row;
+        align-items:center;
+        justify-content: space-between;
+    }
+    .nav-element
+    {
+        padding:0.5rem 0.5rem;
+        font-size:2.5rem;
+        margin:1rem;
+    }
+    .title
+    {
+        padding:3rem 0rem;
+        font-size:3.5rem;   
+        float:left;
+    }
+    .mid
+    {
+        margin:2rem;
+    }
+    .hello-element
+    {
+        display:flex;
+        flex-direction:column;
+        margin-top:10rem;
+    }
+    .hello-element h1
+    {
+        font-size:6rem;
+
+    }
+    
+    .des
+    {
+        margin-bottom:2.5rem;
+        font-size: 3rem;
+        width:65%;
+        font-weight: 600;
+        letter-spacing: -.01em;
+        line-height: 140%;
+    }
+    .des1-text
+    {
+        font-size:2.5rem;
+        width:65%;
+    }
+    
+    .search{
+        margin: 2rem;
+    }
+    .search input{
+        padding: 1rem 2rem;
+        width: 30rem;
+
+    }
+   ::placeholder
+    {   
+        font-size:1.5rem; 
+    }
+}
+
+
+
+.main-movies{
+    margin: 5rem;
+    padding-bottom: 2rem;
+}
+
+.content{
+    display: flex;
+    margin-bottom: 7.5rem;
+    justify-content: left;
+}
+
+h1{
+    margin: 0.25rem 0 1rem 0;
+}
+
+.movies{
+    font-size: 1.75rem;
+    width: 97rem;
+    height: 12rem;
+    text-overflow: ellipsis; 
+    overflow: hidden;
+}
+
+.rm, .name{
+    font-size: 1.75rem;
+}
+
+.rm{
+    color: #f2a70d;
+}
+
+.info{
+    margin: 0 0 0 5rem;
+}
+
+.movie-img{
+    height: 236px;
+    width: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.personal-info{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.profile{
+    height: 4rem;
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+.movies-info{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.icon-title{
+    font-size: 3rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+
+}

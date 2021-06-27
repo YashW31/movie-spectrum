@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main-movie.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<body>
+    <section class="nav-bar">
+        <nav class="nav-bar-side container">
+            <h1 class="title">Movie Spectrum</h1>
+            <div>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <div class="homectsnav">
+              <a href="/home" class="nav-element mid">Home</a>
+              <a href="/admin-movie-list" class="nav-element mid">Movies</a>
+            </div>
+            <div class="nav-right">
+                <form action="/Create" method="GET">
+                    <button type="submit" class="btn"><i class='bx bx-plus icon' ></i></button>
+                </form>
+                <form action="/logout" method="POST">
+                    <button type="submit" class="btn"><i class='bx bx-log-out-circle bx-flip-horizontal icon' ></i></button>
+                </form>
+            </div>
+        </nav>
+    </section>
+
+    <section class="movie-container">
+            <h1 class="heading">
+                <%= movie.movie_name %>
+            </h1>
+            
+            <img src="/uploads/<%= movie.image %>" class="movie-img" alt="">
+            <div class="heading item">
+                <label>Run-time</label>
+                <input type="text" name="timestamp" required class="text lines2" value="<%= movie.timestamp %>">
+            </div>
+            <div class="heading item">
+                <label>Genre</label>
+                <input type="text" name="genre" required class="text lines2" value="<%= movie.genre %>">
+            </div>
+            <div class="heading item">
+                <label>Rating</label>
+                <input type="text" name="rating" required class="text lines2" value="<%= movie.rating %>">
+            </div>
+            <div class="heading item">
+                <label>Released Date</label>
+                <input type="text" name="released_date" required class="text lines2" value="<%= movie.released_date %>">
+            </div>
+            <div class="heading item">
+                <label>Price</label>
+                <input type="text" name="price" required class="text lines2" value="₹ <%= movie.price %>/-">
+            </div>
+            <div class="item">
+                <label>Overview</label>
+                <p name="overview" class="text area" id=""><%= movie.overview %></p>
+            </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/176f3c4d16.js" crossorigin="anonymous"></script>
+</body>
+</html>

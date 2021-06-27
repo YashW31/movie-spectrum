@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+}
+
+body{
+    font-size: 2rem;
+    color: #f2a70d;
+    font-family: 'DM Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+img{
+    width: 100%;
+    display: inline-block;
+}
+
+:focus{
+    outline: none;
+}
+
+.login#blur.active{
+    filter: blur(2px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.login{
+    display: flex;
+}
+
+.photo{
+    background:linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0.6) 99%),  url(../images/banner.png);
+    width: 67.5%;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+.form{
+    background: #181a1b;
+    width: 32.5%;
+    height: 100vh;
+    padding: 20rem 2rem;
+    text-align: center;
+}
+
+
+.creds{
+    margin-top: 40px;
+    padding: 0 70px;
+}
+
+.field{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin: 25px 0;
+    padding: 20px auto;
+}
+
+.field input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid #f2a60d91;
+    background: none;
+    color: #f2a70d;
+    padding-left: 0.6rem;
+}
+
+.login-icon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.field label{
+    position: absolute;
+    font-size: 24px;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.field input:focus ~ label, .field input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 20px;
+    color: #f2a70d;
+}
+
+.field input:hover ~ label , .field input:focus ~ label{
+    opacity: 1;
+}
+
+.field input:focus ~ .icon{
+    font-size: 16px;
+}
+
+:focus{
+    outline: none;
+}
+
+.underline{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 2px;
+    width: 100%;
+}
+
+.underline::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #f2a70d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.field input:hover ~ .underline::before, .field input:focus ~ .underline::before, .field input:valid ~ .underline::before{
+    transform: scaleX(1);
+}
+
+.error{
+    color: red;
+    font-size: small;
+    margin-top: -1.5rem;
+}
+
+.forget-pass , .use-email{
+    text-decoration: none;
+    color: #f2a70d;
+    opacity: 0.5;
+    font-size: 24px;
+}
+
+.sign-in-btn input{
+    background: none;
+    font-size: 1.8rem;
+    color: #f2a70d;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+    transition: 0.3s ease;
+    width: 67.5%;
+    border-radius: 0.5rem;
+}
+
+.sign-in-btn input:hover{
+    background: #f2a70d;
+    font-size: 1.8rem;
+    color: #000;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+}
+
+.photo a{
+    background: #f2a70d;
+    font-size: 1.8rem;
+    color: #000;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+    transition: 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.photo a:hover{
+    background: none;
+    font-size: 1.8rem;
+    color: #f2a70d;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+}
+
+#pop-up{
+    z-index: 10;
+    position: fixed;
+    background: #000;
+    color: #f2a70d;
+    top: -20%;
+    left: 30%;
+    text-align: center;
+    padding: 5rem 3rem;
+    border-radius: 5rem;
+    width: 35%;
+    transition: ease 0.4s;
+    transform: translateY(30%);
+    visibility: hidden;
+    opacity: 0;
+}
+
+#pop-up.active{
+    top: -12%;
+    left: 30%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.sign-up-btn{
+    background: none;
+    font-size: 1.8rem;
+    color: #f2a70d;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+    transition: 0.3s ease;
+    width: 71%;
+    border-radius: 0.5rem;
+    outline: none;
+    text-decoration: none;
+}
+
+.sign-up-btn:hover{
+    background: #f2a70d;
+    font-size: 1.8rem;
+    color: #000;
+    border: 1px solid #f2a70d;
+    margin: 20px auto;
+    padding: 15px 50px;
+}
+
+.cross{
+    color: #f2a70d;
+    background: none;
+    font-size: 3rem;
+    float: right;
+    margin-top: -2rem;
+}
