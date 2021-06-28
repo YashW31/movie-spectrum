@@ -41,10 +41,6 @@
                 <div class="info">
                     <div class="movies-info">
                         <h1><%= movie.movie_name %></h1>
-                        <span>
-                            <a href="/addtofavourites/<%= movie._id %>"><i class='bx bx-bookmark-alt-plus icon-title'></i></a>
-                            <a href="/addtocart/<%= movie._id %>"><i class='bx bxs-cart-add icon-title'></i></a>
-                        </span>
                     </div>
                     <p class="movies"><%= movie.overview %></p>
                     <span>Price: ₹ <%= movie.price %>/-</span><br>
